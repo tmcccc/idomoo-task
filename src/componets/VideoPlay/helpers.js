@@ -14,3 +14,5 @@ export const checkStatus = async (links) => {
         console.log(error)
     }
 };
+
+export const buildPlayerOptions= ( options,src)=> ({ ...options,src })
