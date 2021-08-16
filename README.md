@@ -3,7 +3,7 @@
 in order to run the app you need to run npm i. 
 and then please run npm start.
 
-in the commonComponent folder you will fine generic component as loaer,error, and form
+in the commonComponent folder you will fine generic component as loader,error, and form
 this components can be accessed from other components.
 
 every component have the follwing files:
