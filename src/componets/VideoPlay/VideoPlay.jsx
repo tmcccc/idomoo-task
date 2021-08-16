@@ -6,6 +6,7 @@ import * as styles from './styles'
 import * as helpers from './helpers'
 import Loader from '../../commonComponents/Loader/Loader'
 import {navigate} from "@reach/router";
+import * as constans from './constants'
 
 const VideoPlay = ({className}) => {
     const links = useRecoilValue(VideoUrlState);
@@ -19,23 +20,16 @@ const VideoPlay = ({className}) => {
         if (!links)
             navigate('/')
         else {
-            if (!videoReady)
-                checkStatus()
-            else {
-                let player_options = {
-                    src: links.url,
-                    interactive: true,
-                    size: "hd",
-                    autoplay: true,
-                };
-                idmPlayerCreate(player_options, "idm_player");
-            }
+            !videoReady ?
+                checkStatus():
+                 idmPlayerCreate(helpers.buildPlayerOptions(constans.PLAYER_OPTIONS,links.url), constans.IDM_PLAYER);
+            
         }
 
     }, [videoReady])
 
     return <>
-        {videoReady ? <div className={className} id="idm_player"/> : <Loader/>}
+        {videoReady ? <div className={className} id={ constans.IDM_PLAYER}/> : <Loader/>}
 
     </>
 };
