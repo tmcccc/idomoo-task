@@ -7,7 +7,7 @@ in the commonComponent folder you will fine generic component as loader,error, a
 this components can be accessed from other components.
 
 every component have the follwing files:
- .jsx - the comonent to itself  
+ .jsx - the component  itself  
  helper.js - logic of the compnent  
  styles.js - styles of the component  
  constatns.js = const vriable and method for  the use of the component  
