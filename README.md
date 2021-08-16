@@ -14,7 +14,7 @@ every component have the follwing files:
 
 the form is built with fromik module  
 used styled-components  module for styling the project  
-used reach router to bavigte between pages  
+used reach router to navigte between pages  
 used axios for api requsts  
 used recoil for state managment of the app
 
