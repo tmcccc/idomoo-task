@@ -78,20 +78,6 @@ const buildBody = ({quality, resolution, format, ...rest}) => {
 
 };
 
-const checkStatus = async (links) => {
-    try {
-        const videoStatus = await axios.get(links.check_status_url);
-        if (videoStatus.data.status !== "VIDEO_AVAILABLE") {
-            return new Promise((res) => {
-                setTimeout(() => res(checkStatus(links)), 10000);
-            })
-        } else {
-            return links.url;
-        }
-
-    } catch (error) {
-    }
-};
 
 export const onSubmit = async (values) => {
     try {
@@ -105,7 +91,7 @@ export const onSubmit = async (values) => {
 
         return res.data.output.video[0].links
 
-       // return await checkStatus(res.data.output.video[0].links);
+       
     } catch (e) {
         throw e
     }
