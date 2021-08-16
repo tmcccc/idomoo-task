@@ -1,0 +1,1 @@
+export const DATA= 'an error occured please try again'
